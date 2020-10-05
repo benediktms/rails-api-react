@@ -25,6 +25,8 @@ VSCode will let you choose prettier (inluding the rprettier plugin) as the defau
 
 This will initialize a new `package.json` file (in addition to the one in the front end folder), which we can use to run npm scripts from the project root, i.e. we can run `yarn start` from the root rather than have to go into the frontend folder.
 
+I'm not sure what the setup requirement for other editors are, but getting information on how to set up `Prettier` should be easy enough to find. If you manage to figure it out, feel free to add it to this readme :)
+
 ## Foreman
 
 To start the api and web server with one command we can use the `foreman` gem (needs to be added to the develoment group in the `Gemfile`.). We then need to add the following settings:
