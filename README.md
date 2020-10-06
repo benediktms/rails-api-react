@@ -1,4 +1,8 @@
+This repo acts as a template to help quickly bootstrap a Rails API application with a React frontend. It includes some documentation below to set up some development tools to make the dev process mroe enjoyable/easier to manage with your team. Feel free to contribute!
+
 # Project setup
+
+This project has multiple 'root directories', one standard project folders where project wide configuration is set, and specific roots for the client (frontend) and the server (backend). Make sure you run `yarn` both in the project root and in the frontend folder, as well as bundle in the backend folder.
 
 ## Prettier
 
@@ -27,6 +31,29 @@ This will initialize a new `package.json` file (in addition to the one in the fr
 
 I'm not sure what the setup requirement for other editors are, but getting information on how to set up `Prettier` should be easy enough to find. If you manage to figure it out, feel free to add it to this readme :)
 
+## ESLint
+
+ESLint offers some pretty cool features that help avoid errors, for example with the `eslint-plugin-react-hooks` [plugin](https://www.npmjs.com/package/eslint-plugin-react-hooks) we can ensure React lifecycle hooks are used in legally, i.e. only in top level functional components. There is also some setup required to make it play nicely with Prettier (luckily all we need is the `eslint-plugin-prettier` [plugin](https://github.com/prettier/eslint-plugin-prettier)). You can look into the `.eslintrc.js` file to get an idea of how it's set up:
+
+```
+...
+extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+  ],
+  ...
+  plugins: ['react', 'prettier', 'react-hooks'],
+  rules: {
+    'prettier/prettier': 'error',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+  },
+  ...
+```
+
+Note: ESLint will cause errors if there are multiple versions set up. It should be included with `react-scripts` so you should not have to install it seperatly.
+
 ## Foreman
 
 To start the api and web server with one command we can use the `foreman` gem (needs to be added to the develoment group in the `Gemfile`.). We then need to add the following settings:
@@ -35,3 +62,5 @@ To start the api and web server with one command we can use the `foreman` gem (n
 web: cd frontend && yarn start
 api: cd backend && bundle exec rails s -p 3000
 ```
+
+We can now start both the server and the client at the same time with the `foreman start` command.
