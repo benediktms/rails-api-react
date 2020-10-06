@@ -15,7 +15,7 @@ function App() {
   }, []);
 
   return (
-    <div className='App'>
+    <div className="App">
       <button onClick={() => console.log(users)}>Test connection</button>
     </div>
   );
