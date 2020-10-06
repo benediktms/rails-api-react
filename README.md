@@ -63,13 +63,6 @@ web: cd frontend && yarn start
 api: cd backend && bundle exec rails s -p 3000
 ```
 
-## Resources
-
-For some more information [here](https://medium.com/@eth3rnit3/create-react-app-rails-6-0-custom-server-deployment-part-1-development-configuration-92ce11ea9c56) are some of the guide I followed to set this project up.
-
-[This](https://www.youtube.com/watch?v=z18zLCAg7UU&list=PLgYiyoyNPrv_yNp5Pzsx0A3gQ8-tfg66j) video series is also a good starting point
-
-Note this project used the `rails new appname --api` method to generate an API only backend.
 We can now start both the server and the client at the same time with the `foreman start` command.
 
 ## Resources
