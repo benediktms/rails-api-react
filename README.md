@@ -63,6 +63,14 @@ web: cd frontend && yarn start
 api: cd backend && bundle exec rails s -p 3000
 ```
 
+We also have to ensure that our react app and our rails app don't start on the same server. You can do this by changing the `start` script in the `package.json` file to the following in the frontend folder:
+
+```
+"start": "PORT=4000 react-scripts start",
+```
+
+This will start the react server on port 4000 instead (the number is irrelevant as long as not both apps start on 3000).
+
 We can now start both the server and the client at the same time with the `foreman start` command.
 
 ## Resources
