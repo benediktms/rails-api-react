@@ -6,7 +6,13 @@ This project has multiple 'root directories', one standard project folders where
 
 ## Prettier
 
-To install prettier for both the Ruby backend and the React front end, the configuration file needs to be in the prject root (i.e. in the directory above the front end and the backend). A `.prettierrc` file with the follow settings will have to be initialized:
+To install prettier for both the Ruby backend and the React front end, we need to install it in the project root (since we want to make us of the Ruby extension as well):
+
+```
+yarn add --dev prettier @prettier/plugin-ruby
+```
+
+We also need a configuration file (`.prettierrc`) in the prject root with the follow settings:
 
 ```
 {
@@ -17,17 +23,7 @@ To install prettier for both the Ruby backend and the React front end, the confi
 }
 ```
 
-VSCode will let you choose prettier (inluding the rprettier plugin) as the default formatter in the settings. You may have to go intot the `settings.json` file and add the following lines:
-
-```
-{
-  ...
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-}
-```
-
-This will initialize a new `package.json` file (in addition to the one in the front end folder), which we can use to run npm scripts from the project root, i.e. we can run `yarn start` from the root rather than have to go into the frontend folder.
+In VSCode we can enable the 'format on save' option which should run pretiter every time we save to automatically make any style corrections.
 
 I'm not sure what the setup requirement for other editors are, but getting information on how to set up `Prettier` should be easy enough to find. If you manage to figure it out, feel free to add it to this readme :)
 
